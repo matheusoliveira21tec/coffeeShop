@@ -42,13 +42,25 @@ const scrollHeader = () => {
 window.addEventListener('scroll', scrollHeader)
 
 /*=============== MIXITUP FILTER PRODUCTS ===============*/
-
+let mixerProducts = mixitup('.products__container', {
+    selectors: {
+        target: '.products__card'
+    },
+    animation: {
+        duration: 300
+    }
+});
 
 /* Default filter products */
-
+mixerProducts.filter('.delicacies');
 
 /* Link active products */
-
+const linkProducts = document.querySelectorAll('.products__item');
+function activeLinkProducts() {
+    linkProducts.forEach(l => l.classList.remove('active-product'))
+    this.classList.add('active-product')
+}
+linkProducts.forEach(l => l.addEventListener('click', activeLinkProducts))
 
 /*=============== SHOW SCROLL UP ===============*/
 
